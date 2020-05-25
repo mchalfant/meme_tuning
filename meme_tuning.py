@@ -21,9 +21,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
     for f in concurrent.futures.as_completed(results):
         f.result()
 
-t2 = time.perf_counter()
 available_tuning = a.get_list_of_words()
 
-print(f'Execution time is: {t2} seconds')
 print(f'The available tuning are \n {available_tuning}')
 print(f'Randomly selected tuning for the {__string_num} stringed instrument is: \n \t{available_tuning[random.randrange(0, len(available_tuning) + 1, 2)]}')
